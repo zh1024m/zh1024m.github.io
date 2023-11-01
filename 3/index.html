@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gift</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="htmleaf-container">
+      <div class="wrapper">
+        <div class="container">
+          <h1 id="h"></h1>
+          <form class="form">
+            <!-- <input id="username" type="text" placeholder="姓名" />
+            <input id="passwd" type="password" placeholder="密码" />
+            <button type="submit" id="login-button" onclick="pd()">进入</button>
+            <button type="reset" id="login-button">重置</button>
+          .wrapper.form-success .container h1
+          -->
+            <input type="text" placeholder="请输入用户名..." id="username" />
+            <input type="password" placeholder="请输入密码..." id="passwd" />
+            <input
+              type="button"
+              value="登录"
+              onclick='window.open("new.html")'
+            />
+            <input type="reset" value="清除" />
+          </form>
+        </div>
+ 
+        <ul class="bg-bubbles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript">
+      let accountAll = [
+        {
+          // 存储账户json数据的数组
+          username: vim,
+          passwd: "mjy",
+        },
+        {
+          username: feiyu,
+          passwd: "051024",
+        },
+      ];
+      function login() {
+        let username = document.getElementById("username").value;
+        let passwd = document.getElementById("passwd").value;
+        let account = accountAll.filter(function (e) {
+          return e.username == username;
+        })[0]; // 筛选账号返回数组，不存在则返回空数组
+        if (!account) {
+          alert("用户名或密码输入错误,请认真核对");
+        } else {
+          if (account.username == username && account.passwd == passwd) {
+            alert("登陆成功！");
+            // window.location.href="b.html";
+            // window.open("new.html");
+          } else {
+            alert("用户名或密码输入错误,请认真核对");
+          }
+        }
+      }
+    </script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/verification.js"></script>
+  </body>
+</html>
